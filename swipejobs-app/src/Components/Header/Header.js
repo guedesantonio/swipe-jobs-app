@@ -10,7 +10,6 @@ function Header() {
                     <img src="../img/swipeJobsLogo.png" className="logo" alt="swipejobs-logo"></img>
                 </a>
                 <span className="navbar-text">
-                    Jim Rose
                 </span>
             </nav>
         </header>

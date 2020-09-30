@@ -4,20 +4,22 @@ import React from "react";
 
 function JobCard() {
     return (
-        <div class="card" >
-            <img src="https://imgs.swipejobs.com/js/job-category/construction-1.jpg" class="card-img-top" alt="..."></img>
-            <div class="card-body">
-                <h5 class="card-title">Construction General Helper</h5>
-                <p class="card-text">Steve Smith Construction</p>
+        <div className="card" >
+            <img src="https://imgs.swipejobs.com/js/job-category/construction-1.jpg" className="card-img-top" alt="..."></img>
+            <div className="card-body">
+                <h5 className="card-title">Construction General Helper</h5>
+                <p className="card-text">Steve Smith Construction</p>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item">Distance 5.6 miles       Hourly Rate 13.50</li>
+                <li className="list-group-item">Shift Dates</li>
+                <li className="list-group-item">Location</li>
+                <li className="list-group-item">Requirements</li>
+                <li className="list-group-item">Report to</li>
             </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+            <div className="card-body">
+            <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
             </div>
         </div>
     );
