@@ -1,10 +1,10 @@
 import React from "react";
-
+import './JobCard.css';
 
 
 function JobCard() {
     return (
-        <div className="card" >
+        <div className="card jobCard" >
             <img src="https://imgs.swipejobs.com/js/job-category/construction-1.jpg" className="card-img-top" alt="..."></img>
             <div className="card-body">
                 <h5 className="card-title">Construction General Helper</h5>
@@ -18,8 +18,8 @@ function JobCard() {
                 <li className="list-group-item">Report to</li>
             </ul>
             <div className="card-body">
-            <button type="button" class="btn btn-light">Light</button>
-                <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" className="btn btn-light">Light</button>
+                <button type="button" className="btn btn-dark">Dark</button>
             </div>
         </div>
     );
