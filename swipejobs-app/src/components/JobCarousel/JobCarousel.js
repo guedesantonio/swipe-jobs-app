@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import JobCard from "../JobCard/JobCard";
 import { Carousel } from 'react-bootstrap';
+
 
 
 function JobCarousel() {
