@@ -7,6 +7,7 @@ import JobButton from "../JobButton/JobButton";
 import './JobCard.css';
 
 
+
 function JobCard(props) {
     return (
         <div className="card jobCard" >

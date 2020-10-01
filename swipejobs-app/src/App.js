@@ -14,10 +14,9 @@ function App() {
   useEffect(() => {
     axios.get(PROFILE_URL).then(res => {
       setWorkerProfile(res.data);
-
     })
   }, []);
-  console.log(workerProfile);
+  
   return (
     <Wrapper>
       <Header workerProfile={workerProfile} />
