@@ -1,13 +1,14 @@
 import React from "react";
+import JobImage from "../JobImage/JobImage";
 import './JobCard.css';
 
 
-function JobCard() {
+function JobCard(props) {
     return (
         <div className="card jobCard" >
-            <img src="https://imgs.swipejobs.com/js/job-category/construction-1.jpg" className="card-img-top" alt="..."></img>
+            <JobImage jobImage={props.jobImage} jobTitle={props.jobTitle}/>
             <div className="card-body">
-                <h5 className="card-title">Construction General Helper</h5>
+                <h5 className="card-title">{props.jobTitle}</h5>
                 <p className="card-text">Steve Smith Construction</p>
             </div>
             <ul className="list-group list-group-flush">

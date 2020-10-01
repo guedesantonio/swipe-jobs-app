@@ -6,13 +6,14 @@ import { Carousel } from "react-bootstrap";
 
 function JobCarousel(props) {
     const MATCHES_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/matches`;
-    const [jobList, setJobList] = useState();
-
+    const [jobList, setJobList] = useState([]);
+    
     useEffect(() => {
         axios.get(MATCHES_URL).then(res => {
             setJobList(res.data);
+
         })
-    },[]);
+    }, []);
 
     return (
         <div>
@@ -20,13 +21,21 @@ function JobCarousel(props) {
                 <div className="row">
                     <div className="col-12">
                         <Carousel>
-                            <Carousel.Item>
-                                <JobCard />
-                            </Carousel.Item>
-
-                            <Carousel.Item>
-                                <JobCard />
-                            </Carousel.Item>
+                            {jobList.map(worker => (
+                                <Carousel.Item >
+                                    <JobCard 
+                                        key={worker.jobId}
+                                        jobImage={worker.jobTitle.imageUrl}
+                                        jobTitle={worker.jobTitle.name}
+                                        company={worker.company.name}
+                                        distance={worker.milesToTravel}
+                                        hourlyRate={worker.wagePerHourInCent}
+                                        shiftDates={worker.shifts}
+                                        location={worker.company.address.formattedAddress}
+                                        reportTo={worker.company.reportTo}
+                                    />
+                                </Carousel.Item>
+                            ))}
                         </Carousel>
                     </div>
                 </div>
