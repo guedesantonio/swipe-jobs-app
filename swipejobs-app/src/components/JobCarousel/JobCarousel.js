@@ -1,10 +1,19 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import JobCard from "../JobCard/JobCard";
-import { Carousel } from 'react-bootstrap';
+import axios from "axios";
+import { Carousel } from "react-bootstrap";
 
 
+function JobCarousel(props) {
+    const MATCHES_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/matches`;
+    const [jobList, setJobList] = useState();
 
-function JobCarousel() {
+    useEffect(() => {
+        axios.get(MATCHES_URL).then(res => {
+            setJobList(res.data);
+        })
+    },[]);
+
     return (
         <div>
             <div className='container-fluid' >
@@ -12,11 +21,11 @@ function JobCarousel() {
                     <div className="col-12">
                         <Carousel>
                             <Carousel.Item>
-                               <JobCard/>
+                                <JobCard />
                             </Carousel.Item>
 
                             <Carousel.Item>
-                            <JobCard/>
+                                <JobCard />
                             </Carousel.Item>
                         </Carousel>
                     </div>

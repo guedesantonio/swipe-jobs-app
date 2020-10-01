@@ -10,7 +10,7 @@ function App() {
   return (
     <Wrapper>
       <Header/>
-      <JobCarousel workerID={WORKER_ID}/>
+      <JobCarousel workerId={WORKER_ID}/>
     </Wrapper>
   );
 }
