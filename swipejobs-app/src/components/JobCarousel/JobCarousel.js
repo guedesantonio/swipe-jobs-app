@@ -14,7 +14,7 @@ function JobCarousel(props) {
 
         })
     }, []);
-
+    console.log(jobList);
     return (
         <div>
             <div className='container-fluid' >
@@ -28,8 +28,8 @@ function JobCarousel(props) {
                                         jobImage={worker.jobTitle.imageUrl}
                                         jobTitle={worker.jobTitle.name}
                                         company={worker.company.name}
-                                        distance={worker.milesToTravel}
-                                        hourlyRate={worker.wagePerHourInCent}
+                                        distance={(worker.milesToTravel).toFixed(2)}
+                                        hourlyRateInDollar={(worker.wagePerHourInCents/100).toFixed(2)}
                                         shiftDates={worker.shifts}
                                         location={worker.company.address.formattedAddress}
                                         reportTo={worker.company.reportTo}
