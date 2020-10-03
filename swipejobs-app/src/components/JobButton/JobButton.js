@@ -8,7 +8,7 @@ function JobButton(props) {
     return (
         <button
         onClick={() => {
-            alert.show('Oh look, an alert!')
+            alert.show(props.message)
           }}
         type="button" 
         className={theme}>

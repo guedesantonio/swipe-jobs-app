@@ -25,12 +25,11 @@ function JobCard(props) {
     useEffect(() => {
         axios.get(REJECT_URL).then(res => {
             setRejectList(res.data);
-
         })
     }, []);
 
-    console.log(acceptList);
-    console.log(rejectList);
+    const acceptMessage = acceptList.message;
+    const rejectMessage = "Thanks, position rejected successfully";
 
     return (
         <div className="card jobCard" >
@@ -52,8 +51,8 @@ function JobCard(props) {
                 reportTo={props.reportTo}
             />
             <div className="card-body">
-                <JobButton theme="light" />
-                <JobButton theme="dark" />
+                <JobButton theme="light" message={acceptMessage}/>
+                <JobButton theme="dark" message={rejectMessage}/>
             </div>
         </div>
     );
