@@ -11,19 +11,27 @@ import './JobCard.css';
 
 function JobCard(props) {
     const ACCEPT_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/job/${props.jobId}/accept`;
-        const [acceptList, setAcceptList] = useState([]);
- 
+    const REJECT_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/job/${props.jobId}/reject`;
+    const [acceptList, setAcceptList] = useState([]);
+    const [rejectList, setRejectList] = useState([]);
 
-    
-        useEffect(() => {
-            axios.get(ACCEPT_URL).then(res => {
-                setAcceptList(res.data);
-    
-            })
-        }, []);
-    
-  
-   console.log(acceptList);
+
+    useEffect(() => {
+        axios.get(ACCEPT_URL).then(res => {
+            setAcceptList(res.data);
+        })
+    }, []);
+
+    useEffect(() => {
+        axios.get(REJECT_URL).then(res => {
+            setRejectList(res.data);
+
+        })
+    }, []);
+
+    console.log(acceptList);
+    console.log(rejectList);
+
     return (
         <div className="card jobCard" >
             <JobImage
@@ -44,7 +52,7 @@ function JobCard(props) {
                 reportTo={props.reportTo}
             />
             <div className="card-body">
-                <JobButton theme="light"/>
+                <JobButton theme="light" />
                 <JobButton theme="dark" />
             </div>
         </div>
