@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import { types, transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic';
 import './index.css';
 import App from './App';
@@ -10,7 +10,8 @@ const options = {
   position: positions.MIDDLE,
   timeout: 5000,
   offset: '30px',
-  transition: transitions.SCALE
+  transition: transitions.SCALE,
+  type: types.SUCCESS
 }
 
 const Root = () => (

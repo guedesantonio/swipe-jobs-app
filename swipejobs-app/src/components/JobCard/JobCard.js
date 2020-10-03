@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import JobImage from "../JobImage/JobImage";
 import JobHeader from "../JobHeader/JobHeader";
 import JobMainInfo from "../JobMainInfo/JobMainInfo";
@@ -9,6 +10,20 @@ import './JobCard.css';
 
 
 function JobCard(props) {
+    const ACCEPT_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/job/${props.jobId}/accept`;
+        const [acceptList, setAcceptList] = useState([]);
+    function AcceptJob() {
+
+    
+        useEffect(() => {
+            axios.get(ACCEPT_URL).then(res => {
+                setAcceptList(res.data);
+    
+            })
+        }, []);
+    
+    }
+   console.log(acceptList);
     return (
         <div className="card jobCard" >
             <JobImage

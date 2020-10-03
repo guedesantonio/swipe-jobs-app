@@ -21,9 +21,10 @@ function JobCarousel(props) {
                     <div className="col-12">
                         <Carousel>
                             {jobList.map(worker => (
-                                <Carousel.Item >
+                                <Carousel.Item key={worker.jobId}>
                                     <JobCard
-                                        key={worker.jobId}
+                                        
+                                        jobId={worker.jobId}
                                         jobImage={worker.jobTitle.imageUrl}
                                         jobTitle={worker.jobTitle.name}
                                         company={worker.company.name}
@@ -32,6 +33,7 @@ function JobCarousel(props) {
                                         shiftDates={worker.shifts}
                                         location={worker.company.address.formattedAddress}
                                         reportTo={worker.company.reportTo}
+                                        workId={props.workerId}
                                     />
                                 </Carousel.Item>
                             ))}
