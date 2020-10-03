@@ -33,7 +33,7 @@ function JobCarousel(props) {
                                         shiftDates={worker.shifts}
                                         location={worker.company.address.formattedAddress}
                                         reportTo={worker.company.reportTo}
-                                        workId={props.workerId}
+                                        workerId={props.workerId}
                                     />
                                 </Carousel.Item>
                             ))}

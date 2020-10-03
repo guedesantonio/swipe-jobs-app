@@ -12,7 +12,7 @@ import './JobCard.css';
 function JobCard(props) {
     const ACCEPT_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/job/${props.jobId}/accept`;
         const [acceptList, setAcceptList] = useState([]);
-    function AcceptJob() {
+ 
 
     
         useEffect(() => {
@@ -22,7 +22,7 @@ function JobCard(props) {
             })
         }, []);
     
-    }
+  
    console.log(acceptList);
     return (
         <div className="card jobCard" >
