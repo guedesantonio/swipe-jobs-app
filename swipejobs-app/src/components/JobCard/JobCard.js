@@ -28,8 +28,8 @@ function JobCard(props) {
         })
     }, []);
 
-    const acceptMessage = acceptList.message;
-    const rejectMessage = "Thanks, position rejected successfully";
+    const acceptMessage = (acceptList.message?acceptList.message:"Thanks, position accepted successfully.");
+    const rejectMessage = "Thanks, position rejected successfully.";
 
     return (
         <div className="card jobCard" >
@@ -51,8 +51,8 @@ function JobCard(props) {
                 reportTo={props.reportTo}
             />
             <div className="card-body">
-                <JobButton theme="light" message={acceptMessage}/>
-                <JobButton theme="dark" message={rejectMessage}/>
+                <JobButton theme="light" message={rejectMessage}/>
+                <JobButton theme="dark" message={acceptMessage}/>
             </div>
         </div>
     );
