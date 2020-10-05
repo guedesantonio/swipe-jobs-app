@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/swipe-jobs-app/precache-manifest.acdd0889ce152da2416a68d39e99f369.js"
+  "/swipe-jobs-app/precache-manifest.0648c3f8fa0412e4dcf8936493fdd06e.js"
 );
 
 self.addEventListener('message', (event) => {
