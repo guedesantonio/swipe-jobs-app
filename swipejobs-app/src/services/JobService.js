@@ -28,4 +28,30 @@ export class JobService {
             return null;
         }
     }
+    static async getAcceptList(jobId) {
+        try {
+            if (!AppConfig.workerId) {
+                console.error('worker id not provided');
+                return null;
+            }
+            const res = await axios.get(`${AppConfig.apiUrl}/worker/${AppConfig.workerId}/job/${jobId}/accept`);
+            return res.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+    static async getRejectList(jobId) {
+        try {
+            if (!AppConfig.workerId) {
+                console.error('worker id not provided');
+                return null;
+            }
+            const res = await axios.get(`${AppConfig.apiUrl}/worker/${AppConfig.workerId}/job/${jobId}/reject`);
+            return res.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
 }

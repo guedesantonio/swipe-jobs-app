@@ -1,5 +1,5 @@
 const { it } = require('date-fns/locale');
-const { formatShiftDate } = require('./Utils');
+const { formatShiftDate ,formatDistance ,formatRate } = require('./Utils');
 
 describe('Utils test', () => {
     it('should properly format shift dates', () => {

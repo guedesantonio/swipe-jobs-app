@@ -14,7 +14,7 @@ export const formatShiftDate = (start, end) => {
 // todo: add comment
 export const formatDistance = milesToTravel => {
     if(!milesToTravel) {
-        return 0;
+        return 0.00;
     }
     return milesToTravel.toFixed(2);
 }
@@ -23,7 +23,7 @@ export const formatDistance = milesToTravel => {
 // and will return 0 if invalid rate is provided
 export const formatRate = wagePerHourInCents => {
     if (!wagePerHourInCents) {
-        return 0;
+        return 0.00;
     }
     return (wagePerHourInCents / 100).toFixed(2);
 }
