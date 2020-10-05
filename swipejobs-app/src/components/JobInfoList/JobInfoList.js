@@ -1,83 +1,96 @@
 import React from "react"
 import "./JobInfoList.css"
-import { parseISO } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt , faMapMarkerAlt , faTools , faUser} from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt, faMapMarkerAlt, faTools, faUser } from '@fortawesome/free-solid-svg-icons'
+import { formatShiftDate } from '../../utils/Utils';
 
 const shiftIcon = <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
 const locationIcon = <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" />
 const requirementIcon = <FontAwesomeIcon icon={faTools} size="lg" />
 const reportIcon = <FontAwesomeIcon icon={faUser} size="lg" />
 
-
-
 function JobInfoList(props) {
 
-  const shiftDate = props.shiftDates[0].startDate;
-  console.log(shiftDate)
- const shiftDateNew = parseISO(shiftDate);
- console.log(shiftDateNew)
+  const renderShiftDates = () => {
+    if (props.shiftDates && props.shiftDates.length > 0) {
+      return props.shiftDates.map(shiftDate => {
+        return (
+          <div key={shiftDate.startDate} className="row">
+            {formatShiftDate(shiftDate.startDate, shiftDate.endDate)}
+          </div>)
+      })
+    }
+    return null;
+  }
+
+  const renderRequirements = () => {
+    if (props.requirements && props.requirements.length > 0) {
+      return props.requirements.map(requirement => <li key={requirement}>{requirement}</li>);
+    };
+    return <li>No requirements for this position.</li>
+  };
+
   return (
+
     <ul className="list-group list-group-flush">
       <li className="list-group-item">
-        <div class="row">
-          <div class="col-2 align-self-center">
+        <div className="row">
+          <div className="col-2 align-self-center">
             {shiftIcon}
           </div>
-          <div class="col-8">
-          <div class="row">
-            <a2>Shift Dates</a2>
+          <div className="col-8">
+            <div className="row">
+              <a2>Shift Dates</a2>
             </div>
-            <div class="row">
-              {props.shiftDates[0].startDate} 
-            </div>
-            <div class="row">
-              {props.shiftDates[0].startDate} 
+            <div className="row">
+              {renderShiftDates()}
             </div>
           </div>
         </div>
       </li>
       <li className="list-group-item">
-        <div class="row">
-          <div class="col-2 align-self-center">
+        <div className="row">
+          <div className="col-2 align-self-center">
             {locationIcon}
           </div>
-          <div class="col-8">
-          <div class="row">
-            <a2>Location</a2>
+          <div className="col-8">
+            <div className="row">
+              <a2>Location</a2>
             </div>
-            <div class="row">
-            {props.location}
+            <div className="row">
+              {props.location}
             </div>
           </div>
         </div>
       </li>
       <li className="list-group-item">
-        <div class="row">
-          <div class="col-2 align-self-center">
+        <div className="row">
+          <div className="col-2 align-self-center">
             {requirementIcon}
           </div>
-          <div class="col-8">
-          <div class="row">
-            <a2>Requirements</a2>
+          <div className="col-8">
+            <div className="row">
+              <a2>Requirements</a2>
             </div>
-            <div class="row">
-            {props.location}
+            <div className="row">
+              <ul>
+                {renderRequirements()}
+              </ul>
             </div>
           </div>
         </div>
       </li>
       <li className="list-group-item">
-        <div class="row">
-          <div class="col-2 align-self-center">
+        <div className="row">
+          <div className="col-2 align-self-center">
             {reportIcon}
           </div>
-          <div class="col-8">
-          <div class="row">
-            <a2>Report To</a2>
+          <div className="col-8">
+            <div className="row">
+              <a2>Report To</a2>
             </div>
-            <div class="row">
-            {props.reportTo.name} {props.reportTo.phone}
+            <div className="row">
+              {props.reportTo.name} {props.reportTo.phone}
             </div>
           </div>
         </div>

@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
 import JobCard from "../JobCard/JobCard.js";
-import axios from "axios";
 import { Carousel } from "react-bootstrap";
-import "./JobCarousel.css"
+import "./styles.css"
+import { formatDistance, formatRate } from "../../utils/Utils.js";
+
 
 function JobCarousel(props) {
-    const MATCHES_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/matches`;
-    const [jobList, setJobList] = useState([]);
 
-    useEffect(() => {
-        axios.get(MATCHES_URL).then(res => {
-            setJobList(res.data);
-        })
-    }, []);
+    const { jobs } = props;
 
     return (
         <div>
@@ -20,19 +15,19 @@ function JobCarousel(props) {
                 <div className="row">
                     <div className="col-12">
                         <Carousel>
-                            {jobList.map(worker => (
+                            {jobs && jobs.map(worker => (
                                 <Carousel.Item key={worker.jobId}>
                                     <JobCard
-
                                         jobId={worker.jobId}
                                         jobImage={worker.jobTitle.imageUrl}
                                         jobTitle={worker.jobTitle.name}
                                         company={worker.company.name}
-                                        distance={(worker.milesToTravel).toFixed(2)}
-                                        hourlyRateInDollar={(worker.wagePerHourInCents / 100).toFixed(2)}
+                                        distance={formatDistance(worker.milesToTravel)}
+                                        hourlyRateInDollar={formatRate(worker.wagePerHourInCents)}
                                         shiftDates={worker.shifts}
                                         location={worker.company.address.formattedAddress}
                                         reportTo={worker.company.reportTo}
+                                        requirements={worker.requirements}
                                         workerId={props.workerId}
                                     />
                                 </Carousel.Item>

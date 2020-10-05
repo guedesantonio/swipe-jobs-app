@@ -12,7 +12,7 @@ function JobButton(props) {
           }}
         type="button" 
         className={theme}>
-            {props.theme}
+            {props.name}
         </button>
     )
 }

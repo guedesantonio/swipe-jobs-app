@@ -45,10 +45,11 @@ function JobCard(props) {
                 shiftDates={props.shiftDates}
                 location={props.location}
                 reportTo={props.reportTo}
+                requirements={props.requirements}
             />
-            <div className="card-body">
-                <JobButton theme="light" message={rejectMessage} />
-                <JobButton theme="dark" message={acceptMessage} />
+            <div className="card-body d-flex justify-content-around">
+                <JobButton theme="light" message={rejectMessage} name={"No Thanks"}/>   
+                <JobButton theme="dark" message={acceptMessage} name={"I'II Take it"}/>
             </div>
         </div>
     );
