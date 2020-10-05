@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import JobCard from "../JobCard/JobCard";
+import JobCard from "../JobCard/JobCard.js";
 import axios from "axios";
 import { Carousel } from "react-bootstrap";
-
+import "./JobCarousel.css"
 
 function JobCarousel(props) {
     const MATCHES_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/matches`;
@@ -16,7 +16,7 @@ function JobCarousel(props) {
 
     return (
         <div>
-            <div className='container-fluid' >
+            <div className='container-fluid carousel-container' >
                 <div className="row">
                     <div className="col-12">
                         <Carousel>

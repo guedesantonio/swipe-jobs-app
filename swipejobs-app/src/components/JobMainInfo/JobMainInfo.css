@@ -1,0 +1,16 @@
+.main-info {
+    background-color: #31D4AC;
+    padding:  10px 20px 10px 20px;
+    line-height: 140%;
+}
+
+a1 {
+   font-weight: bold;
+   font-size: x-small;
+}
+
+p1 {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+}

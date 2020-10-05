@@ -5,16 +5,12 @@ import JobHeader from "../JobHeader/JobHeader";
 import JobMainInfo from "../JobMainInfo/JobMainInfo";
 import JobInfoList from "../JobInfoList/JobInfoList";
 import JobButton from "../JobButton/JobButton";
-import './JobCard.css';
-
-
 
 function JobCard(props) {
     const ACCEPT_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/job/${props.jobId}/accept`;
     const REJECT_URL = `https://test.swipejobs.com/api/worker/${props.workerId}/job/${props.jobId}/reject`;
     const [acceptList, setAcceptList] = useState([]);
     const [rejectList, setRejectList] = useState([]);
-
 
     useEffect(() => {
         axios.get(ACCEPT_URL).then(res => {
@@ -28,7 +24,7 @@ function JobCard(props) {
         })
     }, []);
 
-    const acceptMessage = (acceptList.message?acceptList.message:"Thanks, position accepted successfully.");
+    const acceptMessage = (acceptList.message ? acceptList.message : "Thanks, position accepted successfully.");
     const rejectMessage = "Thanks, position rejected successfully.";
 
     return (
@@ -51,8 +47,8 @@ function JobCard(props) {
                 reportTo={props.reportTo}
             />
             <div className="card-body">
-                <JobButton theme="light" message={rejectMessage}/>
-                <JobButton theme="dark" message={acceptMessage}/>
+                <JobButton theme="light" message={rejectMessage} />
+                <JobButton theme="dark" message={acceptMessage} />
             </div>
         </div>
     );

@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./JobHeader.css"
 function JobHeader(props) {
   return (
-    <div className="card-body">
+    <div className="job-header">
       <h5 className="card-title">{props.jobTitle}</h5>
       <p className="card-text">{props.company}</p>
     </div>
