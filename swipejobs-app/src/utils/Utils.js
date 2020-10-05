@@ -17,7 +17,7 @@ export const formatShiftDate = (start, end) => {
 // this method formats the distance from 3 decimals to 2 decimals
 // and will return 0 if invalid rate is provided
 export const formatDistance = milesToTravel => {
-    if(!milesToTravel) {
+    if (!milesToTravel) {
         return 0.00;
     }
     return milesToTravel.toFixed(2);

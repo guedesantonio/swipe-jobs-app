@@ -17,7 +17,7 @@ function App() {
     }
     const jobs = await JobService.getJobList();
     if (jobs) {
-        setJobList(jobs);
+      setJobList(jobs);
     }
   }, []);
 
