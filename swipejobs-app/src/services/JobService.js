@@ -1,6 +1,7 @@
 import axios from "axios";
 import { AppConfig } from '../config/AppConfig';
 
+// class containing main services for the app
 export class JobService {
     static async getJobList() {
         try {

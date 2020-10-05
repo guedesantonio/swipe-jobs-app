@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import JobCard from "../JobCard/JobCard.js";
 import { Carousel } from "react-bootstrap";
 import "./styles.css"
 import { formatDistance, formatRate } from "../../utils/Utils.js";
 
-
+// Main carousel populated with one job card per each position
 function JobCarousel(props) {
-
     const { jobs } = props;
 
     return (

@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// options to customise the alert showed when the Jobbutton is clicked
 const options = {
   position: positions.MIDDLE,
   timeout: 5000,
@@ -13,7 +14,7 @@ const options = {
   transition: transitions.SCALE,
   type: types.SUCCESS
 }
-
+// this enables the alert to be used on the Jobbutton
 const Root = () => (
   <AlertProvider template={AlertTemplate} {...options}>
     <App />

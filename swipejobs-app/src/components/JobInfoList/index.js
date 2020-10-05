@@ -1,28 +1,32 @@
 import React from "react"
-import "./JobInfoList.css"
+import "./styles.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt, faMapMarkerAlt, faTools, faUser } from '@fortawesome/free-solid-svg-icons'
 import { formatShiftDate } from '../../utils/Utils';
 
+// Bulk information about each position
+
+// icons for each section
 const shiftIcon = <FontAwesomeIcon icon={faCalendarAlt} size="lg" />
 const locationIcon = <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" />
 const requirementIcon = <FontAwesomeIcon icon={faTools} size="lg" />
 const reportIcon = <FontAwesomeIcon icon={faUser} size="lg" />
 
-function JobInfoList(props) {
 
+function JobInfoList(props) {
+  // render the shift dates in a list based on the array of shifts for that position
   const renderShiftDates = () => {
     if (props.shiftDates && props.shiftDates.length > 0) {
       return props.shiftDates.map(shiftDate => {
         return (
-          <div key={shiftDate.startDate} className="row">
+          <li key={shiftDate.startDate}>
             {formatShiftDate(shiftDate.startDate, shiftDate.endDate)}
-          </div>)
+          </li>)
       })
     }
     return null;
   }
-
+  // render the requirements in a list based on the array of requirements for that position
   const renderRequirements = () => {
     if (props.requirements && props.requirements.length > 0) {
       return props.requirements.map(requirement => <li key={requirement}>{requirement}</li>);
@@ -40,10 +44,12 @@ function JobInfoList(props) {
           </div>
           <div className="col-8">
             <div className="row">
-              <a2>Shift Dates</a2>
+              <p className="infoTitles">Shift Dates</p>
             </div>
             <div className="row">
-              {renderShiftDates()}
+              <ul>
+                {renderShiftDates()}
+              </ul>
             </div>
           </div>
         </div>
@@ -55,7 +61,7 @@ function JobInfoList(props) {
           </div>
           <div className="col-8">
             <div className="row">
-              <a2>Location</a2>
+              <p className="infoTitles">Location</p>
             </div>
             <div className="row">
               {props.location}
@@ -70,7 +76,7 @@ function JobInfoList(props) {
           </div>
           <div className="col-8">
             <div className="row">
-              <a2>Requirements</a2>
+              <p className="infoTitles">Requirements</p>
             </div>
             <div className="row">
               <ul>
@@ -87,7 +93,7 @@ function JobInfoList(props) {
           </div>
           <div className="col-8">
             <div className="row">
-              <a2>Report To</a2>
+              <p className="infoTitles">Report To</p>
             </div>
             <div className="row">
               {props.reportTo.name} {props.reportTo.phone}

@@ -4,12 +4,13 @@
     line-height: 140%;
 }
 
-a1 {
+.mainInfo {
    font-weight: bold;
    font-size: x-small;
+   color: black;
 }
 
-p1 {
+.info {
     color: white;
     font-weight: bold;
     font-size: x-large;

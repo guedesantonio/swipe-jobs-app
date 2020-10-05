@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Wrapper from "./components/Wrapper/Wrapper.js";
-import Header from "./components/Header/Header.js";
+import Wrapper from "./components/Wrapper/index";
+import Header from "./components/Header/index.js";
 import JobCarousel from "./components/JobCarousel";
 import { JobService } from './services/JobService';
 
 function App() {
+  // API call backs to workerProfile and jobList URLs using JobServices.js
   const [workerProfile, setWorkerProfile] = useState([]);
   const [jobList, setJobList] = useState([]);
 

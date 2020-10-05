@@ -1,5 +1,6 @@
 import React from "react";
-import "./JobHeader.css"
+import "./styles.css"
+
 function JobHeader(props) {
   return (
     <div className="job-header">
