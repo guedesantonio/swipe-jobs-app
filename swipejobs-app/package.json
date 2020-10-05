@@ -12,6 +12,7 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "date-fns": "^2.16.1",
+    "jest-cli": "^26.4.2",
     "moment": "^2.29.0",
     "react": "^16.13.1",
     "react-alert": "^7.0.2",
@@ -24,8 +25,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": "react-app"
