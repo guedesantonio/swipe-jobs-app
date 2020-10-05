@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 function Header(props) {
     return (
         <header className="header">
@@ -9,9 +7,8 @@ function Header(props) {
                 <a className="navbar-brand" href="#">
                     <img src="../img/swipeJobsLogo.png" className="logo" alt="swipejobs-logo"></img>
                 </a>
-                <span className="navbar-text">
-                    {props.workerProfile.firstName}
-                    {props.workerProfile.lastName}
+                <span className="navbar-text text-white">
+                    <b>{props.workerProfile.firstName} {props.workerProfile.lastName}</b>
                 </span>
             </nav>
         </header>

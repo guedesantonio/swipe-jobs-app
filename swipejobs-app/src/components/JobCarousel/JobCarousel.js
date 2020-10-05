@@ -11,9 +11,9 @@ function JobCarousel(props) {
     useEffect(() => {
         axios.get(MATCHES_URL).then(res => {
             setJobList(res.data);
-
         })
     }, []);
+
     return (
         <div>
             <div className='container-fluid' >
@@ -23,7 +23,7 @@ function JobCarousel(props) {
                             {jobList.map(worker => (
                                 <Carousel.Item key={worker.jobId}>
                                     <JobCard
-                                        
+
                                         jobId={worker.jobId}
                                         jobImage={worker.jobTitle.imageUrl}
                                         jobTitle={worker.jobTitle.name}
