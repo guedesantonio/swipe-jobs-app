@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cb7563087f0760dbf902474790486eb5",
+    "revision": "163e5c0f4b89e0b15de6f373bed52f02",
     "url": "/swipe-jobs-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swipe-jobs-app/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "000366ed7170ee9301ea",
+    "revision": "03ba04d0059c983a4bc5",
     "url": "/swipe-jobs-app/static/css/main.a44b51e7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swipe-jobs-app/static/js/2.a3846cee.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "000366ed7170ee9301ea",
-    "url": "/swipe-jobs-app/static/js/main.ebd3d826.chunk.js"
+    "revision": "03ba04d0059c983a4bc5",
+    "url": "/swipe-jobs-app/static/js/main.46ebe4eb.chunk.js"
   },
   {
     "revision": "7051b312df33c957b70d",
